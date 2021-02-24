@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+<meta charset="utf-8">
+<meta name=viewport content="width=device-width, initial-scale=1">
+<title> Геймификация v2 </title>
+<meta name="description" content=""> 
+<meta name="keywords" content=""> 
+<!-- css -->
+<link rel="stylesheet" href="style/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="fa/css/font-awesome.css" />
+<link rel="stylesheet" href="style/style.css" />
+</head>
+<body>
+
+<!-- header -->
+<div class="site_header">
+    <div class="site_header_user_fio">
+        <span>Варфоломеев Евстигней Аднреевич</span>
+    </div>
+    <div 
+        class="site_header_user_ava"
+        style="
+                background: url(style/img/ava.png);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+              "
+    >
+    </div>
+    <i data-feather="menu" class="site_header_hamb" id="site_header_top_menu" data-bs-toggle="dropdown"></i>
+    <ul class="dropdown-menu site_header_dropdown" aria-labelledby="site_header_top_menu">
+        <div class="dropdown_box">
+            <div class="dropdown_user">
+                <div class="row">
+                    <div class="col-2 balans">
+                        <div>Баланс</div>
+                        <div>217</div>
+                    </div>
+                    <div class="col-10">
+                        <div class="fio">
+                            Варфоломеев Евстигней Аднреевич
+                        </div>
+                        <div class="spec">
+                            Старший специалист, Отдел портальных и мобильных решений
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <li class="active">
+                <a class="dropdown-item" href="#">Главная</a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="#">Наши события</a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="howgetcoin.html">Способы получить Гринкоины</a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="#">Как забрать подарок</a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="#">История начислений и списаний</a>
+            </li>
+            <div class="dropdown_menu_btns">
+                <div>
+                    <a href="#" class="dwn_btn spirit_up">
+                        <div>Повысить боевой дух</div>
+                    </a>
+                </div>
+                <div>
+                    <a href="#" class="dwn_btn">
+                        <div>Перевести Гринкоины</div>
+                    </a>
+                </div>
+                <div>
+                    <a href="#" class="dwn_btn">
+                        <div>Конкурсы</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </ul>
+</div>
+
+<div class="page">
+    <!-- pre-header -->
+    <div class="pre_header">
+        <div class="balans segoe_bold">
+            Баланс: <span id="g_coin_balans">217</span>
+        </div>
+    </div>
+
+    <!-- event box -->
+    <div class="event_box" style="
+                                display: table;
+                                width: 100%;
+                                min-height: 260px;
+                                background: url(style/img/sample_banner.png);
+                                background-size: cover;
+                                background-repeat: no-repeat;
+                                background-position: left;
+                                ">
+        <div class="event_box_text">
+            <p>
+                <span>Поздравляем с Днем Космонавтики!</span><br/>
+                Желаем Вам, чтоб жизнь, как комета<br/> - ярко и долго горела для вас!
+            </p>
+            <a href="#">Получить подарок</a>
+        </div>                        
+    </div>
+
+    <!-- paga content -->
+    <div class="site_content">
+        <div class="sort">
+            <div class="dropdown custom_select">
+                <i data-feather="chevron-down"></i>
+                <input class="dropdown-toggle" type="button" id="sortCustomSelect" data-bs-toggle="dropdown" value="Сортировать по">
+                <ul class="dropdown-menu" aria-labelledby="sortCustomSelect">
+                <li data-select="По цене">По цене</li>
+                <li data-select="По популярности">По популярности</li>
+                </ul>
+            </div>
+            <!-- <a href="#">Подарки со скидкой</a> -->
+        </div>
+        <div class="row">
+            <!-- item -->
+            <div class="col-sm-6 col-md-4 col-lg-3 col-xxl-2 card_box">
+                <div class="card_item">
+                    <div class="card_image">
+                        <img src="style/img/image 25.png">
+                    </div>
+                    <div class="card_title">
+                        Бутылка для воды
+                    </div>
+                    <div class="card_footer">
+                        <div class="row">
+                            <div class="col">
+                                <span class="like"></span><span>12</span>
+                            </div>
+                            <div class="col">
+                                <span>100</span><span class="cost"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- item -->
+            <div class="col-sm-6 col-md-4 col-lg-3 col-xxl-2 card_box">
+                <div class="card_item">
+                    <div class="card_image">
+                        <img src="style/img/image 24.png">
+                    </div>
+                    <div class="card_title">
+                        Брелок с логотипом
+                    </div>
+                    <div class="card_footer">
+                        <div class="row">
+                            <div class="col">
+                                <span class="like active"></span><span>12</span>
+                            </div>
+                            <div class="col">
+                                <span>100</span><span class="cost"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- item -->
+            <div class="col-sm-6 col-md-4 col-lg-3 col-xxl-2 card_box">
+                <div class="card_item">
+                    <div class="card_image">
+                        <img src="style/img/image 26.png">
+                    </div>
+                    <div class="card_title">
+                    Ваза с логотипом
+                    </div>
+                    <div class="card_footer">
+                        <div class="row">
+                            <div class="col">
+                                <span class="like"></span><span>12</span>
+                            </div>
+                            <div class="col">
+                                <span>100</span><span class="cost"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- item -->
+            <div class="col-sm-6 col-md-4 col-lg-3 col-xxl-2 card_box">
+                <div class="card_item">
+                    <div class="card_image">
+                        <img src="style/img/image 27.png">
+                    </div>
+                    <div class="card_title">
+                        Гантель виниловая
+                    </div>
+                    <div class="card_footer">
+                        <div class="row">
+                            <div class="col">
+                                <span class="like active"></span><span>12</span>
+                            </div>
+                            <div class="col">
+                                <span>100</span><span class="cost"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- item -->
+            <div class="col-sm-6 col-md-4 col-lg-3 col-xxl-2 card_box">
+                <div class="card_item">
+                    <div class="card_image">
+                        <img src="style/img/image 28.png">
+                    </div>
+                    <div class="card_title">
+                        Держатель для телефона с логотипом
+                    </div>
+                    <div class="card_footer">
+                        <div class="row">
+                            <div class="col">
+                                <span class="like active"></span><span>12</span>
+                            </div>
+                            <div class="col">
+                                <span>100</span><span class="cost"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- item -->
+            <div class="col-sm-6 col-md-4 col-lg-3 col-xxl-2 card_box">
+                <div class="card_item">
+                    <div class="card_image">
+                        <img src="style/img/image 29.png">
+                    </div>
+                    <div class="card_title">
+                        Дорожный несессер
+                    </div>
+                    <div class="card_footer">
+                        <div class="row">
+                            <div class="col">
+                                <span class="like active"></span><span>12</span>
+                            </div>
+                            <div class="col">
+                                <span>100</span><span class="cost"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- item -->
+            <div class="col-sm-6 col-md-4 col-lg-3 col-xxl-2 card_box">
+                <div class="card_item">
+                    <div class="card_image">
+                        <img src="style/img/image 31.png">
+                    </div>
+                    <div class="card_title">
+                        Зонт-трость синего цвета
+                    </div>
+                    <div class="card_footer">
+                        <div class="row">
+                            <div class="col">
+                                <span class="like active"></span><span>12</span>
+                            </div>
+                            <div class="col">
+                                <span>100</span><span class="cost"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- item -->
+            <div class="col-sm-6 col-md-4 col-lg-3 col-xxl-2 card_box">
+                <div class="card_item">
+                    <div class="card_image">
+                        <img src="style/img/image 33.png">
+                    </div>
+                    <div class="card_title">
+                        Кепка графитовая с логотипом Гринатом
+                    </div>
+                    <div class="card_footer">
+                        <div class="row">
+                            <div class="col">
+                                <span class="like active"></span><span>12</span>
+                            </div>
+                            <div class="col">
+                                <span>100</span><span class="cost"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- item -->
+            <div class="col-sm-6 col-md-4 col-lg-3 col-xxl-2 card_box">
+                <div class="card_item">
+                    <div class="card_image">
+                        <img src="style/img/image 34.png">
+                    </div>
+                    <div class="card_title">
+                        Клавиатура
+                    </div>
+                    <div class="card_footer">
+                        <div class="row">
+                            <div class="col">
+                                <span class="like active"></span><span>12</span>
+                            </div>
+                            <div class="col">
+                                <span>100</span><span class="cost"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- item -->
+            <div class="col-sm-6 col-md-4 col-lg-3 col-xxl-2 card_box">
+                <div class="card_item">
+                    <div class="card_image">
+                        <img src="style/img/image 35.png">
+                    </div>
+                    <div class="card_title">
+                        Коврик на стол Bantex
+                    </div>
+                    <div class="card_footer">
+                        <div class="row">
+                            <div class="col">
+                                <span class="like active"></span><span>12</span>
+                            </div>
+                            <div class="col">
+                                <span>100</span><span class="cost"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- item -->
+            <div class="col-sm-6 col-md-4 col-lg-3 col-xxl-2 card_box">
+                <div class="card_item">
+                    <div class="card_image">
+                        <img src="style/img/image 36.png">
+                    </div>
+                    <div class="card_title">
+                        Колонка беспроводная
+                    </div>
+                    <div class="card_footer">
+                        <div class="row">
+                            <div class="col">
+                                <span class="like active"></span><span>12</span>
+                            </div>
+                            <div class="col">
+                                <span>100</span><span class="cost"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- item -->
+            <div class="col-sm-6 col-md-4 col-lg-3 col-xxl-2 card_box">
+                <div class="card_item">
+                    <div class="card_image">
+                        <img src="style/img/image 37.png">
+                    </div>
+                    <div class="card_title">
+                        Контейнер для ланча Миньон
+                    </div>
+                    <div class="card_footer">
+                        <div class="row">
+                            <div class="col">
+                                <span class="like active"></span><span>12</span>
+                            </div>
+                            <div class="col">
+                                <span>100</span><span class="cost"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- js -->
+<!-- <script src="style/js/clamp.js"></script> -->
+<script src="style/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="style/js/jquery.js"></script>
+<script src="style/js/feather.min.js"></script>
+<script src="style/js/main.js"></script>
+</body>
+</html>
