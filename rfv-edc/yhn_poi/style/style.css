@@ -428,7 +428,7 @@ h2 {
     border: 1px solid #025ea1;
     font-size: 14px;
     text-decoration: none;
-    padding: 7px 10px;
+    padding: 10px;
     border-radius: 4px;
     outline: none;
 }
@@ -440,7 +440,7 @@ h2 {
     border: 1px solid #025ea1;
     font-size: 14px;
     text-decoration: none;
-    padding: 7px 10px;
+    padding: 10px;
     border-radius: 4px;
     outline: none;
 }
@@ -459,7 +459,7 @@ h2 {
 
 .pre_header_buttons_in_menu a {
     font-family: 'Segoe UI Bold';
-    color: #025ea1;  
+    color: #025ea1;
     text-decoration: none;
 }
 
@@ -1188,7 +1188,7 @@ h2 {
 }
 
 .event_item .likes {
-    padding: 0 0 5px 0; 
+    padding: 0 0 5px 0;
     font-family: 'Segoe UI Bold';
     color: #6cace4;
 }
