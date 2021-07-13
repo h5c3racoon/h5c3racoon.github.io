@@ -4,11 +4,22 @@
 }
 
 .control span {
+  color: rgba(255, 44, 102, 0.6);
   font-weight: bold;
 }
 
-.line_through {
-  text-decoration: line-through;
+.cool {
+  color: rgba(19, 158, 19, 0.6) !important;
+}
+
+.r {
+  background-color: rgba(44, 255, 44, 0.6);
+  border-radius: 50%;
+}
+
+.n {
+  background-color: rgba(255, 44, 102, 0.6);
+  border-radius: 50%;
 }
 
 .game {

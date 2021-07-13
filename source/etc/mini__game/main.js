@@ -2,6 +2,8 @@ $(document).ready(function(){
   $('.counter__span').text(10);
 });
 
+var answers = [];
+
 $('.game__grid > div').click(function(){
 
   var counter = $('.counter__span').text();
@@ -10,17 +12,21 @@ $('.game__grid > div').click(function(){
     alert('Попытки закончелись!')
   }
 
+  else if($(this).hasClass('r')) {
+    $('.counter__span').text(counter);
+  }
+
   else {
     $('.counter__span').text(counter - 1);
 
     var coordinates = $(this).attr('data-coordinates');
     if(coordinates == 'h10') {
-      alert('Верно, это телефон!');
-      $('.tel').addClass('line_through');
+      $('.tel').addClass('cool');
+      $(this).addClass('r');
     }
     if(coordinates == 'f6') {
-      alert('Верно, это канцелярские иголки!');
-      $('.knop').addClass('line_through');
+      $('.knop').addClass('cool');
+      $(this).addClass('r');
     }
     console.log(coordinates);
   }
