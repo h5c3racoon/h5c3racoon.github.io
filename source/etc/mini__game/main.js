@@ -9,16 +9,18 @@ $('.game__grid > div').click(function(){
   if(counter == 0) {
     alert('Попытки закончелись!')
   }
-  
+
   else {
     $('.counter__span').text(counter - 1);
 
     var coordinates = $(this).attr('data-coordinates');
     if(coordinates == 'h10') {
       alert('Верно, это телефон!');
+      $('.tel').addClass('line_through');
     }
     if(coordinates == 'f6') {
       alert('Верно, это канцелярские иголки!');
+      $('.knop').addClass('line_through');
     }
     console.log(coordinates);
   }

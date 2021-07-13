@@ -3,8 +3,12 @@
   margin: 0 0 10px 0;
 }
 
-.counter__span {
+.control span {
   font-weight: bold;
+}
+
+.line_through {
+  text-decoration: line-through;
 }
 
 .game {
