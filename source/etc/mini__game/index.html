@@ -4,194 +4,32 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link rel="stylesheet" href="style.css">
-<title>mini game</title>
+<link rel="stylesheet" href="style/css/bootstrap.min.css">
+<link rel="stylesheet" href="style/css/style.css">
+<title>mini game v2 (vue)</title>
 </head>
 <body>
 
-<div class="control">
-  <fieldset>
-    <legend>Сетка</legend>
-    <button onclick="hideGridLine()">Скрыть</button>
-    <button onclick="showGridLine()">Показать</button>
-  </fieldset>
-</div>
-
-<div class="control">
-  <fieldset>
-    <legend>Задание</legend>
-    Необходимо, найти <span class="tel">телефон</span> и <span class="knop">канцелярские иголки</span>
-    <div>
-      Осталось попыток: <strong class="counter__span"></strong>
+  <div id="app">
+    <div class="game"
+      :style="{width: game_field.width + 'px', height: game_field.height + 'px'}"
+    >
+    <button class="btn btn-danger increase__btn" @click="increaseSize()">
+      <svg v-if="!increase_size" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"> <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 20l-4.05-4.05m0 0a7 7 0 10-9.9-9.9 7 7 0 009.9 9.9zM8 11h3m3 0h-3m0 0V8m0 3v3"/></svg>
+      <svg v-if="increase_size" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"> <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 20l-4.05-4.05m0 0a7 7 0 10-9.9-9.9 7 7 0 009.9 9.9zM8 11h6"/> </svg>
+    </button>
+      <div class="game__grid">
+        <div
+          v-for="coordinate in coordinate_cell"
+          :bind:data-coordinate="coordinate"
+          @click="getCoordinate(coordinate)"
+        >{{coordinate}}</div>
+      </div>
     </div>
-  </fieldset>
-</div>
-
-<div class="game">
-  <div class="game__grid">
-
-    <div data-coordinates="a1"></div>
-    <div data-coordinates="a2"></div>
-    <div data-coordinates="a3"></div>
-    <div data-coordinates="a4"></div>
-    <div data-coordinates="a5"></div>
-    <div data-coordinates="a6"></div>
-    <div data-coordinates="a7"></div>
-    <div data-coordinates="a8"></div>
-    <div data-coordinates="a9"></div>
-    <div data-coordinates="a10"></div>
-    <div data-coordinates="a11"></div>
-    <div data-coordinates="a12"></div>
-
-    <div data-coordinates="b1"></div>
-    <div data-coordinates="b2"></div>
-    <div data-coordinates="b3"></div>
-    <div data-coordinates="b4"></div>
-    <div data-coordinates="b5"></div>
-    <div data-coordinates="b6"></div>
-    <div data-coordinates="b7"></div>
-    <div data-coordinates="b8"></div>
-    <div data-coordinates="b9"></div>
-    <div data-coordinates="b10"></div>
-    <div data-coordinates="b11"></div>
-    <div data-coordinates="b12"></div>
-
-    <div data-coordinates="c1"></div>
-    <div data-coordinates="c2"></div>
-    <div data-coordinates="c3"></div>
-    <div data-coordinates="c4"></div>
-    <div data-coordinates="c5"></div>
-    <div data-coordinates="c6"></div>
-    <div data-coordinates="c7"></div>
-    <div data-coordinates="c8"></div>
-    <div data-coordinates="c9"></div>
-    <div data-coordinates="c10"></div>
-    <div data-coordinates="c11"></div>
-    <div data-coordinates="c12"></div>
-
-    <div data-coordinates="d1"></div>
-    <div data-coordinates="d2"></div>
-    <div data-coordinates="d3"></div>
-    <div data-coordinates="d4"></div>
-    <div data-coordinates="d5"></div>
-    <div data-coordinates="d6"></div>
-    <div data-coordinates="d7"></div>
-    <div data-coordinates="d8"></div>
-    <div data-coordinates="d9"></div>
-    <div data-coordinates="d10"></div>
-    <div data-coordinates="d11"></div>
-    <div data-coordinates="d12"></div>
-
-    <div data-coordinates="e1"></div>
-    <div data-coordinates="e2"></div>
-    <div data-coordinates="e3"></div>
-    <div data-coordinates="e4"></div>
-    <div data-coordinates="e5"></div>
-    <div data-coordinates="e6"></div>
-    <div data-coordinates="e7"></div>
-    <div data-coordinates="e8"></div>
-    <div data-coordinates="e9"></div>
-    <div data-coordinates="e10"></div>
-    <div data-coordinates="e11"></div>
-    <div data-coordinates="e12"></div>
-
-    <div data-coordinates="f1"></div>
-    <div data-coordinates="f2"></div>
-    <div data-coordinates="f3"></div>
-    <div data-coordinates="f4"></div>
-    <div data-coordinates="f5"></div>
-    <div data-coordinates="f6"></div>
-    <div data-coordinates="f7"></div>
-    <div data-coordinates="f8"></div>
-    <div data-coordinates="f9"></div>
-    <div data-coordinates="f10"></div>
-    <div data-coordinates="f11"></div>
-    <div data-coordinates="f12"></div>
-
-    <div data-coordinates="g1"></div>
-    <div data-coordinates="g2"></div>
-    <div data-coordinates="g3"></div>
-    <div data-coordinates="g4"></div>
-    <div data-coordinates="g5"></div>
-    <div data-coordinates="g6"></div>
-    <div data-coordinates="g7"></div>
-    <div data-coordinates="g8"></div>
-    <div data-coordinates="g9"></div>
-    <div data-coordinates="g10"></div>
-    <div data-coordinates="g11"></div>
-    <div data-coordinates="g12"></div>
-
-    <div data-coordinates="h1"></div>
-    <div data-coordinates="h2"></div>
-    <div data-coordinates="h3"></div>
-    <div data-coordinates="h4"></div>
-    <div data-coordinates="h5"></div>
-    <div data-coordinates="h6"></div>
-    <div data-coordinates="h7"></div>
-    <div data-coordinates="h8"></div>
-    <div data-coordinates="h9"></div>
-    <div data-coordinates="h10"></div>
-    <div data-coordinates="h11"></div>
-    <div data-coordinates="h12"></div>
-
-    <div data-coordinates="i1"></div>
-    <div data-coordinates="i2"></div>
-    <div data-coordinates="i3"></div>
-    <div data-coordinates="i4"></div>
-    <div data-coordinates="i5"></div>
-    <div data-coordinates="i6"></div>
-    <div data-coordinates="i7"></div>
-    <div data-coordinates="i8"></div>
-    <div data-coordinates="i9"></div>
-    <div data-coordinates="i10"></div>
-    <div data-coordinates="i11"></div>
-    <div data-coordinates="i12"></div>
-
-    <div data-coordinates="j1"></div>
-    <div data-coordinates="j2"></div>
-    <div data-coordinates="j3"></div>
-    <div data-coordinates="j4"></div>
-    <div data-coordinates="j5"></div>
-    <div data-coordinates="j6"></div>
-    <div data-coordinates="j7"></div>
-    <div data-coordinates="j8"></div>
-    <div data-coordinates="j9"></div>
-    <div data-coordinates="j10"></div>
-    <div data-coordinates="j11"></div>
-    <div data-coordinates="j12"></div>
-
-    <div data-coordinates="k1"></div>
-    <div data-coordinates="k2"></div>
-    <div data-coordinates="k3"></div>
-    <div data-coordinates="k4"></div>
-    <div data-coordinates="k5"></div>
-    <div data-coordinates="k6"></div>
-    <div data-coordinates="k7"></div>
-    <div data-coordinates="k8"></div>
-    <div data-coordinates="k9"></div>
-    <div data-coordinates="k10"></div>
-    <div data-coordinates="k11"></div>
-    <div data-coordinates="k12"></div>
-
-    <div data-coordinates="l1"></div>
-    <div data-coordinates="l2"></div>
-    <div data-coordinates="l3"></div>
-    <div data-coordinates="l4"></div>
-    <div data-coordinates="l5"></div>
-    <div data-coordinates="l6"></div>
-    <div data-coordinates="l7"></div>
-    <div data-coordinates="l8"></div>
-    <div data-coordinates="l9"></div>
-    <div data-coordinates="l10"></div>
-    <div data-coordinates="l11"></div>
-    <div data-coordinates="l12"></div>
-
-
-
   </div>
-</div>
 
-<script src="jquery.js"></script>
-<script src="main.js"></script>
+<!-- scripts -->
+<script src="js/vue.global.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>
