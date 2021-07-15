@@ -12,7 +12,7 @@
 
   <div id="app">
     <div class="game"
-      :style="{width: game_field.width + 'px', height: game_field.height + 'px'}"
+      :style="{width: game_field.width + 'px', height: game_field.height + 'px', backgroundImage: 'url(' + image_url + ')'}"
     >
     <button class="btn btn-danger increase__btn" @click="increaseSize()">
       <svg v-if="!increase_size" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"> <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 20l-4.05-4.05m0 0a7 7 0 10-9.9-9.9 7 7 0 009.9 9.9zM8 11h3m3 0h-3m0 0V8m0 3v3"/></svg>

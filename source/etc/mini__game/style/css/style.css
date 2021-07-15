@@ -1,7 +1,7 @@
 .game {
   position: relative;
   border: 1px solid black;
-  background: url('../image/image1.jpg');
+  /* background: url('../image/image1.jpg'); */
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
