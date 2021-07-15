@@ -9,7 +9,8 @@ const App = {
       image_size: {width: 500, height: 500},
       game_field: {},
       increase_size: false,
-      answers: []
+      answers: [],
+      centered_class: false
     }
   },
   // --- mounted
@@ -51,10 +52,12 @@ const App = {
           width: userHeight,
           height: userHeight
         }
+        this.centered_class = true
       }
 
       if(this.increase_size == false) {
         this.game_field = this.image_size
+        this.centered_class = false
       }
     }
   },

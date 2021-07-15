@@ -11,7 +11,7 @@
 <body>
 
   <div id="app">
-    <div class="game"
+    <div :class="{centered: centered_class}" class="game"
       :style="{width: game_field.width + 'px', height: game_field.height + 'px', backgroundImage: 'url(' + image_url + ')'}"
     >
     <button class="btn btn-danger increase__btn" @click="increaseSize()">
