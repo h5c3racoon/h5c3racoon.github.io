@@ -4,6 +4,7 @@
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  cursor: default;
 }
 
 .game.centered {
@@ -35,9 +36,37 @@
   background-color: rgba(255, 255, 255, 0.3);
 }
 
+.game__grid > div.selected {
+  background-color: rgba(255, 0, 0, 0.5) !important;
+  border-radius: 50%;
+}
+
 .increase__btn {
   position: absolute;
   top: 5px;
   right: 5px;
   z-index: 9;
+}
+
+.answers {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 150px;
+  padding: 0 10px 0 0;
+  text-align: right;
+}
+
+.answers ul {
+  list-style: none;
+  padding: 0;
+}
+
+.answers button {
+  margin: 10px 0 0 0;
+}
+
+.answers .message {
+  color: red;
+  margin: 10px 0 0 0;
 }

@@ -11,8 +11,10 @@
 <body>
 
   <div id="app">
-    <div :class="{centered: centered_class}" class="game"
+    <div
+      :class="{centered: centered_class}" class="game"
       :style="{width: game_field.width + 'px', height: game_field.height + 'px', backgroundImage: 'url(' + image_url + ')'}"
+      @click.once="startTimer()"
     >
     <button class="btn btn-danger increase__btn" @click="increaseSize()">
       <svg v-if="!increase_size" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"> <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 20l-4.05-4.05m0 0a7 7 0 10-9.9-9.9 7 7 0 009.9 9.9zM8 11h3m3 0h-3m0 0V8m0 3v3"/></svg>
@@ -20,11 +22,25 @@
     </button>
       <div class="game__grid">
         <div
-          v-for="coordinate in coordinate_cell"
+          v-for="(coordinate, index) in coordinate_cell"
           :bind:data-coordinate="coordinate"
-          @click="getCoordinate(coordinate)"
+          @click="getCoordinate(coordinate, index)"
+          :ref="'selected' + index"
         >{{coordinate}}</div>
       </div>
+    </div>
+    <!-- answers -->
+    <div class="answers">
+      <ul>
+        <p>время: {{timer}}</p>
+        <p>ответы:</p>
+        <li v-for="answer in answers">{{answer}}</li>
+      </ul>
+      <div>попыток: {{Math.abs(answers.length - 10)}}</div>
+      <div v-if="cancel_vision">
+        <button class="btn btn-info" @click="cancel()">Закончить</button>
+      </div>
+      <div class="message" v-if="message.status">{{message.text}}</div>
     </div>
   </div>
 
