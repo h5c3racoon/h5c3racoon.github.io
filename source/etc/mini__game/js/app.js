@@ -11,12 +11,13 @@ const App = {
       increase_size: false,
       answers: [],
       centered_class: false,
-      timer: 10,
+      timer: 20,
       cancel_vision: false,
       message: {
         status: false,
-        text: 'Ответы засчитаты, спасибо!'
-      }
+        text: ''
+      },
+      akacancel: false
 
     }
   },
@@ -43,14 +44,33 @@ const App = {
     startTimer() {
       this.cancel_vision = true
       let timer = setInterval(() => {
+
         if(this.timer === 0) {
+
+          if(this.akacancel === true) {
+            console.log('if akacancel =', this.akacancel) // log, удалить
+            clearInterval(timer)
+
+            this.message = {
+              status: true,
+              text: 'Ответы будут отправлены на проверку. Спасибо!'
+            }
+            return false
+          }
+
           // - > время вышло, можно оправлять ответы (this.answers)
+          this.akacancel === true
           clearInterval(timer)
-          alert('Увы, время вышло. Ответы будут отправлены на проверку')
+          // alert('Увы, время вышло. Ответы будут отправлены на проверку')
           this.cancel_vision = false
-          this.message.status = true
+          this.message = {
+            status: true,
+            text: 'Увы, время вышло. Ответы будут отправлены на проверку'
+          }
           console.log('Ответы за период времени', this.answers)
+          console.log('if timer =', this.timer) // log, удалить
         }
+
         else {
           this.timer = this.timer - 1
         }
@@ -129,7 +149,7 @@ const App = {
     cancel() {
       this.timer = 0
       this.cancel_vision = false
-      this.message.status = true
+      this.akacancel = true
     }
 
   },

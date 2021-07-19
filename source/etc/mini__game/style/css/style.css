@@ -62,6 +62,10 @@
   padding: 0;
 }
 
+.answers ul li {
+  color: blue;
+}
+
 .answers button {
   margin: 10px 0 0 0;
 }
