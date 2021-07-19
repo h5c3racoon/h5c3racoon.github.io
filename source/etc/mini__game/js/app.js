@@ -48,13 +48,14 @@ const App = {
         if(this.timer === 0) {
 
           if(this.akacancel === true) {
-            console.log('if akacancel =', this.akacancel) // log, удалить
             clearInterval(timer)
 
             this.message = {
               status: true,
               text: 'Ответы будут отправлены на проверку. Спасибо!'
             }
+            console.log('answers:', this.answers)
+            console.log('if akacancel =', this.akacancel) // log, удалить
             return false
           }
 
@@ -67,7 +68,7 @@ const App = {
             status: true,
             text: 'Увы, время вышло. Ответы будут отправлены на проверку'
           }
-          console.log('Ответы за период времени', this.answers)
+          console.log('answers:', this.answers)
           console.log('if timer =', this.timer) // log, удалить
         }
 
@@ -97,7 +98,7 @@ const App = {
             this.answers.splice(index, 1);
           }
 
-          console.log('answers:', this.answers);
+          // console.log('answers:', this.answers);
         }
       }
 
@@ -117,7 +118,7 @@ const App = {
           curentRef.classList.add('selected')
           // добавляем координату в массив ответов
           this.answers.push(coordinate)
-          console.log('answers:', this.answers);
+          // console.log('answers:', this.answers);
 
         }
       }
