@@ -1,0 +1,307 @@
+.sys_event {
+    max-width: 1080px !important;
+    padding: 0 !important;  
+}
+
+.sys_event h1 {
+    text-align: center;
+}
+
+.sys_page {
+    max-width: 100%;
+}
+
+.contest_start {
+    max-width: 100%;
+    min-height: calc(100vh - 165px);
+    background-color: #fff;
+    box-shadow: 0px 2px 7px -2px rgb(2, 94, 161, 0.2);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+.contest_start.active {
+    padding: 20px;    
+    margin-bottom: 20px;
+    justify-content: flex-start;
+}
+.site_content .contest_start h1 {
+    font-family: 'Segoe UI Bold';
+    font-size: 28px;
+}
+.contest_start.active .contest_description {
+    margin-bottom: 40px;
+}
+.contest_description p {
+    font-size: 16px;
+}
+.contest_images {    
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    display: none;
+}
+.contest_start.active .contest_images {
+    display: flex;
+}
+.contest_images img {
+    width: 49%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0px 2px 7px -2px rgb(2, 94, 161, 0.2);
+}
+.contest_fixed {
+    width: 100%;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0px 2px 7px -2px rgb(2, 94, 161, 0.2);
+    padding: 20px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+}
+.contest_center {
+    max-width: 1080px !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+.contest_fixed.active .contest_center {
+    justify-content: space-between;
+}
+.contest_btn {
+    /* min-width: 120px;
+    font-size: 16px;
+    padding: 4px 10px;
+    color: #025ea1;
+    border: 1px solid #025ea1;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 0 3px rgb(0 0 0 / 35%);
+    text-transform: uppercase; */
+    background-color: #025ea1;
+    font-family: 'Segoe UI Bold';
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    box-shadow: 0px 2px 7px -2px rgb(2, 94, 161, 0.2);
+    border: none;
+}
+.contest_btn:focus {
+    outline: none;
+}
+.contest_btn:hover {
+    background-color: #025ea1;
+    color: #fff;
+}
+.contest_timer, .contest_attempts {
+    display: none;
+}
+.contest_fixed.active .contest_timer, 
+.contest_fixed.active .contest_attempts {
+    display: block;
+}
+.contest_fixed .end_btn {
+    display: none;
+}
+.contest_fixed.active .end_btn {
+    display: block;
+}
+.contest_fixed.active .start_btn {
+    display: none;
+}
+.contest_attempts {
+    font-size: 16px;
+}
+.contest_attempts span {
+    width: 45px;
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 700;
+    padding: 4px;
+    background-color: #fff;
+    color: #025ea1;
+    box-shadow: inset 0 0 3px rgb(0 0 0 / 30%);
+    border-radius: 4px;
+    display: inline-block;
+}
+#timer1 {
+    width: 110px;
+    padding: 4px;
+    box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
+    background-color: #fff;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    position: relative;
+}
+#timer1 svg {
+    width: 20px;
+    margin: 0 5px 0 0;
+    color: #025ea1;
+}
+#timer1 div {
+    width: 23px;
+    height: 20px;
+    font-size: 20px;
+    line-height: 20px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+}
+#timer1 .minutes {
+    text-align: right;
+}
+#timer1 .seconds {
+    text-align: left;
+}
+#timer1 .separator {
+    width: 10px;
+}
+#timer2 {
+    width: 200px;
+    height: 29px;
+    padding: 4px;
+    box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
+    background-color: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+}
+#timer2 .progress_bar {
+    width: 100%;
+    height: 100%;
+    background-color: #62dc62;
+    border-radius: 3px;
+}
+.background_progress {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    z-index: -1;
+    display: none;
+}
+.contest_fixed.active .background_progress {
+    display: block;
+}
+.background_progress .progress_bar {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #d3f7d3;
+}
+.contest_greet {
+    max-width: 1080px !important;
+    background-color: #fff;
+    box-shadow: 0 0 3px rgb(0 0 0 / 30%);
+    padding: 130px 30px;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    display: none;
+}
+.contest_greet h2 {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+.contest_greet .contest_fixed {
+    justify-content: center;
+    margin-bottom: 0;
+}
+.contest_greet .contest_btn {
+    margin-bottom: 0;
+}
+.contest_greet .contest_description {
+    margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px)
+{
+    .contest_start,
+    .contest_start.active {
+        padding: 20px 10px;
+    }
+    .contest_start.active .contest_images {
+        display: block;
+    }
+    .contest_images img {
+        width: 100%;
+        max-width: 500px;
+        display: block;
+        margin: 0 auto 10px auto;
+    }
+    .contest_fixed.active .contest_center {
+        flex-direction: column;
+    }
+    .contest_fixed.active .contest_timer {
+        display: block;
+        margin-bottom: 10px;
+    }
+    #timer1 {
+        margin: 0 auto 5px auto;
+    }
+    #timer2 {
+        height: 20px;
+    }
+    .contest_fixed.active .contest_btn {
+        margin-bottom: 10px;
+    }
+    .contest_fixed.active .contest_attempts {
+        display: block;
+    }
+    .contest_greet {
+        padding: 40px 20px;
+    }
+    .contest_center {
+        padding: 0;
+    }
+    .sys_event {
+        margin-bottom: 100px;
+    }
+}
+
+
+@media (max-width: 576px)
+{
+    .contest_start,
+    .contest_start.active {
+        padding: 10px;
+    }
+    .contest_greet {
+        padding: 20px 10px;
+    }
+}
