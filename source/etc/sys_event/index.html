@@ -122,30 +122,35 @@
                             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio numquam voluptatem, ab quibusdam alias facilis
                             illum magni corporis at nesciunt consectetur soluta quo nisi culpa repellat voluptate eius nihil deserunt id,
                             quae maiores? Error, neque, molestias, facere nihil nemo natus modi deleniti porro recusandae eos quaerat.</p>
-                        </div>
+                        </div>                        
                         <!-- картинки для сравнения -->
                         <div class="contest_images">
-                            <img src="style/img/image.jpg" alt="image">
-                            <img src="style/img/image.jpg" alt="image">
+                            <div class="image_wrapper">
+                                <img src="style/img/image.jpg" alt="image">
+                            </div>
+                            <div class="image_wrapper">
+                                <img src="style/img/image.jpg" alt="image">
+                            </div>
                         </div>
+                    </div>
+                    <div class="contest_end">
+                        <p>Время вышло!</p>
+                        <span>Ответы направлены на проверку. Спасибо за участие!</span>
                     </div>
                 </div>
 
                 <div class="contest_fixed">
                     <!-- фоновый прогресс бар -->
-                    <div class="background_progress" data-seconds="60">
+                    <div class="background_progress" data-seconds="30">
                         <div class="progress_bar"></div>
                     </div>
                     <div class="contest_center">
                         <div class="contest_timer">
-                            <div id="timer1" data-seconds="60">
+                            <div id="timer1" data-seconds="30">
                                 <i data-feather="clock"></i>
                                 <div class="minutes">1</div>
                                 <div class="separator">:</div>
                                 <div class="seconds">20</div>
-                            </div>
-                            <div id="timer2" data-seconds="60">
-                                <div class="progress_bar"></div>
                             </div>
                         </div>
                         <button class="contest_btn end_btn">Закончить</button>

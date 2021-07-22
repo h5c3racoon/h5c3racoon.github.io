@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         }
     }
 
-    // функция обратного отсчёта для прогресс баров фоном и полосой.
+    // функция обратного отсчёта для фонового прогресс бара
     let countdown2 = function(wrapper, data_seconds)
     {
         if(data_seconds >= 0)
@@ -52,6 +52,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         else
         {
             // время закончилось
+            document.querySelector(".contest_start").classList.add("timeout");
         }
     }
 
@@ -63,8 +64,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
         // запуск прогресс бара - таймер
         countdown1(parseInt(document.querySelector("#timer1").dataset.seconds));
-        // запуск прогресс бара - полоса
-        countdown2("#timer2", parseInt(document.querySelector("#timer2").dataset.seconds));
         // запуск прогресс бара - фон
         countdown2(".background_progress", parseInt(document.querySelector(".background_progress").dataset.seconds));
     }
