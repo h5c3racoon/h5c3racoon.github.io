@@ -1,5 +1,5 @@
-document.addEventListener("DOMContentLoaded", function(event) { 
-    
+document.addEventListener("DOMContentLoaded", function(event) {
+
     // функция обратного отсчёта для цифрового прогресс бара
     let countdown1 = function(data_seconds)
     {
@@ -11,10 +11,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
             minutes = minutes.toString().padStart(2, 0);
             seconds = seconds.toString().padStart(2, 0);
-            
+
             document.querySelector("#timer1 .minutes").innerText = minutes;
             document.querySelector("#timer1 .seconds").innerText = seconds;
-            
+
             setTimeout(function(){
                 countdown1(parseInt(total_seconds - 1));
             }, 1000);
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         else
         {
             // время закончилось
-        }      
+        }
     }
 
     // функция обратного отсчёта для прогресс баров фоном и полосой.
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             let source_seconds = document.querySelector(wrapper).dataset.seconds;
             let percent = total_seconds / (source_seconds / 100);
             let progress_bar = document.querySelector(wrapper + " .progress_bar");
-            
+
             // начиная с 25% процентов окрашиваем пргресс в красный
             if(percent <= 25)
             {
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
             progress_bar.style.width = percent + "%";
             progress_bar.style.transition = "all 1.3s ease-out";
-            
+
             // вызов самой себя с уменьшенным значением аргумента
             setTimeout(function(){
                 countdown2(wrapper, parseInt(total_seconds - 1));
@@ -69,8 +69,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
         countdown2(".background_progress", parseInt(document.querySelector(".background_progress").dataset.seconds));
     }
 
-    
 
-    
+
+
 
 });
