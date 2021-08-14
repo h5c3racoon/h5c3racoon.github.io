@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href='https://h5c3racoon.github.io/source/fonts/css/fira-sans.css' rel='stylesheet'/>
+<link rel="stylesheet" href="preloader.css">
+<title>reddit search image</title>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        font-family: 'Fira Sans';
+        font-size: 14px;
+    }
+    input,
+    button {
+        font-family: 'Fira Sans';
+    }
+    input:focus {
+        outline: none;
+    }
+    button:focus {
+        outline: none;
+        background-color: #219dd6 !important;
+    }
+    a {
+        color: #00afff;
+    }
+    .search {
+        padding: 0 0 10px 0;
+    }
+    #searchInput {
+        width: 100%;
+        padding: 15px 90px 15px 15px;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0 0 10px 0 #cecece;
+    }
+    #searchButton {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background-color: #00afff;
+        color: #fff;
+        padding: 8px 15px;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0 0 10px 0 #cecece;
+        cursor: pointer;
+    }
+    #messages {
+        padding: 10px 0 0 0;
+        text-align: center;
+    }
+    .preloader {
+        margin: 15px 0 0 0;
+    }
+    #list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .item {
+        margin: 10px 0;
+        padding: 10px;
+        flex: 1 calc(100% / 5);
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .item .preview {
+        padding: 10px 0;
+    }
+    .item .author {
+        font-size: 12px;
+    }
+</style>
+</head>
+<body>
+
+    <div class="search">
+        <input type="text" id="searchInput" placeholder="subreddit search" />
+        <button id="searchButton">search</button>
+    </div>
+   
+    <div id="messages"></div>
+    <div id="list"></div>
+
+<script>
+
+    searchButton.addEventListener('click', () => {
+
+        let inputText = searchInput.value
+        searchInput.value = ''
+        let items = []
+
+        list.innerHTML = ''
+        messages.innerHTML = '<div>load data ...</div>' +
+                             '<div class="preloader lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>'
+
+        let fetchUrl = 'https://www.reddit.com/r/' + inputText + '.json?limit=100'
+
+        fetch(fetchUrl)
+        .then((response) => {
+             return response.json();
+        })
+        .then((data) => {
+            // console.log(data.data.children)
+
+            for(let item in data.data.children) {
+                let oneItem = data.data.children[item].data
+                if(oneItem.url.indexOf('.jpg') !== -1 && oneItem.url.indexOf('i.imgur.com') == -1) {
+                    items.push(oneItem)
+                }
+            }
+
+            messages.innerHTML = 'result: ' + items.length
+
+            for(item in items) {
+                list.innerHTML += '<div class="item">' + 
+                                        '<div class="title">' + items[item].title + '</div>' + 
+                                        '<div class="preview">' + 
+                                            '<a href="' + items[item].url + '" target="_blank">' +
+                                                '<img src="' + items[item].thumbnail + '">' +
+                                            '</a>' +
+                                        '</div>' + 
+                                        '<div class="author">' +
+                                            '<a href="https://www.reddit.com/user/' + items[item].author + '" target="_blank">' + items[item].author + '</a>'
+                                        '</div>' +
+                                    '</div>'
+            }
+        })
+        .catch((error) => {
+            // console.log(error)
+            list.innerHTML = ''
+            messages.innerHTML = '"' + inputText + '", load error'
+        })
+
+    })
+
+</script>    
+</body>
+</html>
