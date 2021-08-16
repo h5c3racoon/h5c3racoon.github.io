@@ -2,9 +2,10 @@ searchButton.addEventListener('click', () => {
 
         let inputText = searchInput.value
         searchInput.value = ''
+        
         let items = []
-
         list.innerHTML = ''
+
         messages.innerHTML = '<div>load data ...</div>' +
                              '<div class="preloader lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>'
 
@@ -15,7 +16,6 @@ searchButton.addEventListener('click', () => {
              return response.json();
         })
         .then((data) => {
-            // console.log(data.data.children)
 
             for(let item in data.data.children) {
                 let oneItem = data.data.children[item].data
@@ -41,7 +41,6 @@ searchButton.addEventListener('click', () => {
             }
         })
         .catch((error) => {
-            // console.log(error)
             list.innerHTML = ''
             messages.innerHTML = '"' + inputText + '", not fount'
         })
