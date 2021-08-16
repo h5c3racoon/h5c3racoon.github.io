@@ -35,7 +35,9 @@ searchButton.addEventListener('click', () => {
                                             '</a>' +
                                         '</div>' + 
                                         '<div class="author">' +
-                                            '<a href="https://www.reddit.com/user/' + items[item].author + '" target="_blank">' + items[item].author + '</a>'
+                                            '<a href="https://www.reddit.com/user/' + items[item].author + '" target="_blank">' + 
+                                                items[item].author + 
+                                            '</a>'
                                         '</div>' +
                                     '</div>'
             }
