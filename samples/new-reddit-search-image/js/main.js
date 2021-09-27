@@ -35,14 +35,11 @@ searchButton.addEventListener('click', () => {
                 }
             }
 
-            messages.innerHTML = 'result: <span class="blue">' + items.length + '</span>'
+            messages.innerHTML = 'result: <span class="blue">' + items.length + '</span>';
 
             items.map(item => {
               list.innerHTML += `
                 <div class="nItem">
-                  <div class="nAuthor">
-                    <a href="https://www.reddit.com/user/${item.author}" target="_blank">${item.author}</a>
-                  </div>
                   <div class="nContent">
                     <div class="nAttachImg">
                       <a href="${item.url}" target="_blank">
@@ -50,6 +47,9 @@ searchButton.addEventListener('click', () => {
                       </a>
                     </div>
                     <div class="nTextContent">${item.title}</div>
+                  </div>
+                  <div class="nAuthor">
+                    <a href="https://www.reddit.com/user/${item.author}" target="_blank">${item.author}</a>
                   </div>
                 </div>
               `
