@@ -99,6 +99,7 @@ a {
 }
 .nAttachImg img {
   width: 100%;
+  max-width: 100px;
   border-radius: 5px;
 }
 .nTextContent {
