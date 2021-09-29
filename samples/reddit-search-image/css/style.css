@@ -29,7 +29,7 @@ a {
     border: none;
     border-radius: 5px;
     box-shadow: 0 0 10px 0 #cecece;
-    background: url('../img/search.svg') no-repeat center left 15px;
+    background: url('../images/search.svg') no-repeat center left 15px;
 }
 #searchButton {
     position: absolute;
@@ -44,17 +44,17 @@ a {
     cursor: pointer;
 }
 #messages {
-    padding: 10px 0 0 0;
-    text-align: center;
+  padding: 10px 0 15px 0;
+  text-align: center;
 }
 .preloader {
     margin: 15px 0 0 0;
 }
-#list {
+/* #list {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-}
+} */
 .item {
     margin: 10px 0;
     padding: 10px;
@@ -74,4 +74,79 @@ a {
 }
 .grey {
     color: #7d858d;
+}
+/* new style */
+.nItem {
+  margin: 0 0 20px 0;
+  padding: 10px 20px 20px 20px;
+  box-shadow: 0 0 10px 0 #e5e5e5;
+  border-radius: 5px;
+}
+.nAuthor {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-user'%3E%3Cpath d='M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2'%3E%3C/path%3E%3Ccircle cx='12' cy='7' r='4'%3E%3C/circle%3E%3C/svg%3E");
+  background-size: 18px;
+  background-position: center right;
+  background-repeat: no-repeat;
+  margin: 10px 0 0 0;
+  padding: 0 25px 0 0;
+  text-align: right;
+}
+.nAuthor a {
+  text-decoration: none;
+}
+.nContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.nAttachImg {
+  width: 100px;
+}
+.nAttachImg img {
+  width: 100%;
+  min-width: 100px;
+  max-width: 100px;
+  border-radius: 5px;
+}
+.nTextContent {
+  flex: auto;
+  padding: 0 20px;
+}
+.result {
+  display: flex;
+  padding: 5px;
+}
+.result > div {
+  width: 50%;
+}
+.result .total {
+  text-align: left;
+}
+.result .grid {
+  text-align: right;
+  display: none;
+}
+.result .grid span {
+  color: #00afff;
+  cursor: pointer;
+}
+.onlyImgCard {
+  position: relative;
+}
+.onlyImgCard img {
+  width: 100%;
+}
+.onlyImgCard span {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: #fff;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+/* media */
+@media (max-width: 576px) {
+  .result .grid {
+    display: block;
+  }
 }
