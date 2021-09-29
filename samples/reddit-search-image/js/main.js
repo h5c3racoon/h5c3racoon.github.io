@@ -80,7 +80,7 @@ searchButton.addEventListener('click', () => {
               list.innerHTML += `
                 <div class="onlyImgCard">
                   <a href="${item.url}" target="_blank">
-                    <img src="${item.thumbnail}" />
+                    <img src="${item.url}" />
                   </a>
                   <span>
                     <a href="https://www.reddit.com/user/${item.author}" target="_blank">${item.author}</a>
