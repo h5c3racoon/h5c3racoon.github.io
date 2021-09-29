@@ -41,7 +41,7 @@ searchButton.addEventListener('click', () => {
                   result: <span class="blue"> ${items.length} </span>
                 </div>
                 <div class="grid">
-                  <span id="gridSwap" onclick="gridSwap()">only img</span>
+                  <span id="gridSwap" onclick="gridSwap()">image view</span>
                 </div>
               </div>
             `;
@@ -73,7 +73,7 @@ searchButton.addEventListener('click', () => {
         gridSwap = () => {
           let v = document.getElementById('gridSwap').innerText;
           if(v === 'only img') {
-            document.getElementById('gridSwap').innerHTML = 'card view';
+            document.getElementById('gridSwap').innerHTML = 'cards view';
             // rebuild
             list.innerHTML = '';
             items.map(item => {
@@ -90,7 +90,7 @@ searchButton.addEventListener('click', () => {
             })
           }
           if(v === 'card view') {
-            document.getElementById('gridSwap').innerHTML = 'only img';
+            document.getElementById('gridSwap').innerHTML = 'image view';
             // rebuild
             list.innerHTML = '';
             items.map(item => {
