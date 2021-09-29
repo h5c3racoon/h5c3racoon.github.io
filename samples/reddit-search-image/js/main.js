@@ -72,7 +72,7 @@ searchButton.addEventListener('click', () => {
 
         gridSwap = () => {
           let v = document.getElementById('gridSwap').innerText;
-          if(v === 'only img') {
+          if(v === 'image view') {
             document.getElementById('gridSwap').innerHTML = 'cards view';
             // rebuild
             list.innerHTML = '';
@@ -89,7 +89,7 @@ searchButton.addEventListener('click', () => {
               `;
             })
           }
-          if(v === 'card view') {
+          if(v === 'cards view') {
             document.getElementById('gridSwap').innerHTML = 'image view';
             // rebuild
             list.innerHTML = '';
