@@ -46,9 +46,10 @@ searchButton.addEventListener('click', () => {
               </div>
             `;
 
-            items.map(item => {
+            items.map((item, index) => {
               list.innerHTML += `
                 <div class="nItem">
+                  <span class="total">${index + 1} / ${items.length}</span>
                   <div class="nContent">
                     <div class="nAttachImg">
                       <a href="${item.url}" target="_blank">
@@ -74,15 +75,16 @@ searchButton.addEventListener('click', () => {
           let v = document.getElementById('gridSwap').innerText;
           if(v === 'image view') {
             document.getElementById('gridSwap').innerHTML = 'cards view';
-            // rebuild
+            // rebuild - image view
             list.innerHTML = '';
-            items.map(item => {
+            items.map((item, index) => {
               list.innerHTML += `
                 <div class="onlyImgCard">
+                  <span class="total">${index + 1} / ${items.length}</span>
                   <a href="${item.url}" target="_blank">
                     <img src="${item.url}" />
                   </a>
-                  <span>
+                  <span class="author">
                     <a href="https://www.reddit.com/user/${item.author}" target="_blank">${item.author}</a>
                   </span>
                 </div>
@@ -91,7 +93,7 @@ searchButton.addEventListener('click', () => {
           }
           if(v === 'cards view') {
             document.getElementById('gridSwap').innerHTML = 'image view';
-            // rebuild
+            // rebuild - cards view
             list.innerHTML = '';
             items.map(item => {
               list.innerHTML += `
