@@ -98,6 +98,7 @@ searchButton.addEventListener('click', () => {
             items.map(item => {
               list.innerHTML += `
                 <div class="nItem">
+                <span class="total">${index + 1} / ${items.length}</span>
                   <div class="nContent">
                     <div class="nAttachImg">
                       <a href="${item.url}" target="_blank">
