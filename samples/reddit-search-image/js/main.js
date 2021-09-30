@@ -95,7 +95,7 @@ searchButton.addEventListener('click', () => {
             document.getElementById('gridSwap').innerHTML = 'image view';
             // rebuild - cards view
             list.innerHTML = '';
-            items.map(item => {
+            items.map((item, index) => {
               list.innerHTML += `
                 <div class="nItem">
                 <span class="total">${index + 1} / ${items.length}</span>
