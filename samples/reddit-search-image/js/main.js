@@ -1,3 +1,12 @@
+const showPost = (e) => {
+  e.nextElementSibling.style.display = 'flex';
+  e.outerHTML = '<span class="showpost" onclick="hidePost(this)">hide post text</span>';
+}
+const hidePost = (e) => {
+  e.nextElementSibling.style.display = 'none';
+  e.outerHTML = '<span class="showpost" onclick="showPost(this)">show post text</span>';
+}
+
 searchButton.addEventListener('click', () => {
 
         let inputText = searchInput.value;
@@ -81,6 +90,8 @@ searchButton.addEventListener('click', () => {
               list.innerHTML += `
                 <div class="onlyImgCard">
                   <span class="total">${index + 1} / ${items.length}</span>
+                  <span class="showpost" onclick="showPost(this)">show post text</span>
+                  <div class="showpost__text">${item.title}</div>
                   <a href="${item.url}" target="_blank">
                     <img src="${item.url}" />
                   </a>
