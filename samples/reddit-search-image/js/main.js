@@ -77,7 +77,7 @@ searchButton.addEventListener('click', () => {
         })
         .catch(error => {
             list.innerHTML = ''
-            messages.innerHTML = '"' + inputText + '", not fount'
+            messages.innerHTML = '"' + inputText + '", not found'
         })
 
         gridSwap = () => {
